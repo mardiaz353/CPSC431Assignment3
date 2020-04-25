@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="style/stylesheet.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h2 class="panel-title">Let's Chat</h2>
+    </div>
+    <div class="panel-body">
+    <form action="chat.php" method="post">
+        <div class="form-group row">
+            <label for="inputName" class="col-sm-2 col-form-label">Your Name:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputName" name="username" placeholder="Name">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary has-spinner col-sm-2">
+            <span class="spinner"><i class="icon-spin icon-refresh"></i></span>
+            Start
+        </button>
+    </form>
+    </div>
+    </div>
+    </div>
+</body>
+</html>
