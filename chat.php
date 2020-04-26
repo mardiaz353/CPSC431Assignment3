@@ -1,5 +1,5 @@
 <?php
-//if(isset($_POST["username"])){
+if(isset($_POST["username"])){
 	session_start();
 	ob_start();
 	header("Content-type: application/json");
@@ -26,7 +26,19 @@
 		}
 		return $RESULT;
 	}
-	try {		
+	try {
+		$username=$_GET["username"];
+		$insertQuery = "INSERT INTO `chatlog` 
+		(`username`) 
+		VALUES ('$username')";
+    
+    
+    // if query works tell user
+    $retval = mysql_query($insertQuery,$db);
+    
+    if(! $retval){
+        die('Could not enter data: ' . mysql_error());
+    }
 		$currentTime = time();
 		$session_id = session_id();    
 		$lastPoll = isset($_SESSION['last_poll']) ? $_SESSION['last_poll'] : $currentTime;    
@@ -72,5 +84,5 @@
 			'error' => $e->getMessage()
 		]);
 	}
-//}
+}
 ?>
