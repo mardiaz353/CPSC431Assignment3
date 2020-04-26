@@ -1,7 +1,7 @@
 var pollServer = function() {
-    $.get('http://ecs.fullerton.edu/~cs431s28/chat.php', function(result) {
-        
-        if(!result.success) {
+    // $.get('http://ecs.fullerton.edu/~cs431s/Chapter23/chat.php', function(result) {
+        $.get('chat.php', function(result) {
+        if(!result.success) { // a callback function that check it went thru
             console.log("Error polling server for new messages!");
             return;
         }
@@ -36,12 +36,18 @@ $(document).on('ready', function() {
 });
 
 $('#sendMessageBtn').on('click', function(event) {
-    event.preventDefault();
+    event.preventDefault(); // ensure it dos not take the user away from page
     
     var message = $('#chatMessage').val();
+    // gets the username and random color thru url
+    let params = new URLSearchParams(location.search);
+    var color = params.get('color');
+    var username = params.get('username');
     
     $.post('chat.php', {
-        'message' : message
+        'message' : message,
+        'color': color,
+        'username': username
     }, function(result) {
         
         $('#sendMessageBtn').toggleClass('active');
