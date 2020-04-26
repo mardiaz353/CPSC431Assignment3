@@ -9,14 +9,16 @@ var pollServer = function() {
         $.each(result.messages, function(idx) {
             
             var chatBubble;
-            
+
             if(this.sent_by == 'self') {
+                // trying to change the color here
+                // document.getElementById("bubble-sent").style.background = "yellow";
                 chatBubble = $('<div class="row bubble-sent pull-right">' + 
-                               this.message + 
+                               "me: " + this.message + 
                                '</div><div class="clearfix"></div>');
             } else {
                 chatBubble = $('<div class="row bubble-recv">' + 
-                               this.message + 
+                               this.username + ": " + this.message + 
                                '</div><div class="clearfix"></div>');
             }
             
