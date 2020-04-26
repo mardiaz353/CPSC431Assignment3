@@ -15,11 +15,13 @@
         <h2 class="panel-title">Let's Chat</h2>
     </div>
     <div class="panel-body">
-    <form action="chat.php" method="post">
+    <form action="chat.html" method="GET">
         <div class="form-group row">
             <label for="inputName" class="col-sm-2 col-form-label">Your Name:</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="inputName" name="username" placeholder="Name">
+                <!-- randome color is sent here -->
+                <input type="hidden" id="exa" name="color" value="123">
             </div>
         </div>
         <button type="submit" class="btn btn-primary has-spinner col-sm-2">
@@ -31,4 +33,46 @@
     </div>
     </div>
 </body>
+<script src="//code.jquery.com/jquery-2.2.3.min.js"></script>
+<script>
+    var randomNum = Math.floor(Math.random() * 10) + 1; // random number from 1 to 10
+    switch(randomNum){
+        case 1:
+        color="000000"; // black
+        break;
+        case 2: 
+        color="000080";//Navy
+        break;
+        case 3:
+        color="800080";//Purple
+        break;
+        case 4:
+        color="00FFFF";//Aqua
+        break;
+        case 5:
+        color="FFFF00";//Yellow
+        break;
+        case 6:
+        color="008080";//Teal
+        break;
+        case 7:
+        color="A52A2A";//Brown
+        break;
+        case 8:
+        color="FFA500";//Orange
+        break;
+        case 9:
+        color="CCCCCC";//Gray
+        break;
+        case 10:
+        color="0000FF";//Blue
+        break;
+        default:
+        color="00FF00";//Green
+    }
+    console.log(color);
+    $('exa').value=color; // same as below just in jquery
+    // document.getElementById('exa').value= color;
+
+</script>
 </html>
