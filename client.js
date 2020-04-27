@@ -18,7 +18,9 @@ var pollServer = function() {
                                'me: ' + this.message +
                                '</div><div class="clearfix"></div>');
             } else {
-                chatBubble = $('<div class="row bubble-recv">' + 
+                var cstyle = '<div class="row bubble-recv" style="background: #'
+                + this.color + '; color: white">';
+                chatBubble = $(cstyle + 
                                this.username + ": " + this.message + 
                                '</div><div class="clearfix"></div>');
             }
