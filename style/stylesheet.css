@@ -4,7 +4,7 @@
     width: 330px;
     height: 75px;
     padding: 10px;
-    background: #AEE5FF;
+    background: var(--color, red);
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
@@ -18,7 +18,7 @@
     position: absolute;
     border-style: solid;
     border-width: 15px 15px 15px 0;
-    border-color: transparent #AEE5FF;
+    border-color: transparent var(--color, red);
     display: block;
     width: 0;
     z-index: 1;
@@ -46,7 +46,7 @@
     width: 330px;
     height: 75px;
     padding: 10px;
-    background: #00E500;
+    background: var(--color, red);
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     border-radius: 10px;
@@ -60,7 +60,7 @@
     position: absolute;
     border-style: solid;
     border-width: 15px 0 15px 15px;
-    border-color: transparent #00E500;
+    border-color: transparent var(--color, red);
     display: block;
     width: 0;
     z-index: 1;
